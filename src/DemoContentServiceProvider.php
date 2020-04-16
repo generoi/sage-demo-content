@@ -19,7 +19,7 @@ class DemoContentServiceProvider extends ServiceProvider
     {
         $this->publishes([
             __DIR__ . '/../publishes/resources' => $this->app->resourcePath('demo'),
-        ], 'Sage Demo Content');
+        ], 'demo');
 
         $this->gutenberg();
         $this->gravityform();
@@ -89,11 +89,11 @@ class DemoContentServiceProvider extends ServiceProvider
      */
     protected function getFilePath(string $path): ?string
     {
-        if (file_exists($file = $this->app->resourcePath("demo/$path")) {
-          return $file;
+        if (file_exists($file = $this->app->resourcePath("demo/$path"))) {
+            return $file;
         }
-        if (file_exists($file = __DIR__ . "/../publishes/resources/demo/$path")) {
-          return $file;
+        if (file_exists($file = __DIR__ . "/../publishes/resources/$path")) {
+            return $file;
         }
         return null;
     }
