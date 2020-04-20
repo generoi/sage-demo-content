@@ -19,7 +19,7 @@ class DemoContentServiceProvider extends ServiceProvider
     {
         $this->publishes([
             __DIR__ . '/../publishes/resources' => $this->app->resourcePath('demo'),
-        ], 'demo');
+        ], 'Demo Content');
 
         $this->gutenberg();
         $this->gravityform();
